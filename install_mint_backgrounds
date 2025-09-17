@@ -1,0 +1,86 @@
+#!/bin/bash
+
+########################################################################
+#                                                                      #
+# Instalador de pacotes de papéis de parede do Linux Mint no Slackware #
+#                                                                      #
+# By LinuxDicasPro - Mauricio Ferrari                                  #
+#                                                                      #
+#                                                                      #
+# Precisa ser root.                                                    #
+#                                                                      #
+########################################################################
+
+
+[ $UID != 0 ] && {
+    echo -e "\nRun as Root !\n"
+    exit 1
+}
+
+dir="_MintBackgrounds"
+
+[ ! -e "$dir" ] && {
+    mkdir -p "$dir"
+    chown 1000:users "$dir"
+}
+
+cd "$dir"
+
+exception="debian helena isadora julia katya katya-extra lisa lisa-extra maya maya-extra nadia nadia-extra retro xfce"
+
+name="mint-backgrounds"
+link0="http://packages.linuxmint.com/pool/main/m"
+
+list="$(grep -Eo "$name-[aA-zZ]+" <(links -dump "$link0"))"
+
+cd "/var/log/packages"
+lst=$(printf "%s\n" *)
+cd - >& /dev/null
+
+R='\e[1;31m'
+G='\e[1;32m'
+Y='\e[1;33m'
+B='\e[1;3;4;34m'
+N='\e[1;37m'
+T='\e[m'
+
+for i in $list; {
+
+    test -n "$(grep "${i##*[-]}" <<< "$exception")" && {
+        echo -e "${N}exception ${R}$i${T}"
+        continue
+    }
+
+    link1="$link0/$i"
+
+    echo -e "${N}verify link $link1${T}"
+    pkg=($(sort -nr <(grep -Eo "$i[_]([0-9]+[.])+[0-9]+[_]all[.]deb" <(links -dump "$link1"))))
+    pkg="${pkg[0]}"
+
+    link2="$link1/$pkg"
+    echo -e "${G}found ${B}$link2${T}"
+
+    test -n "$(grep -Eo "${pkg%[.]*}" <<< "$lst")" && {
+        echo -e "${Y}already installed${T}"
+        continue
+    }
+
+    printf "${N}"
+    wget -c -q --show-progress "$link2"
+    printf "${T}"
+
+    test -e "$pkg" && {
+        ar -x "$pkg" || continue
+        rm control.tar.?z* debian-binary
+    } || continue
+
+    data=data.tar.?z*
+
+    mv $data "${pkg%[.]*}.$(sed "s/data.\|ar.\|2\|ma//g" <(echo $data))"
+
+    echo -e "${G}install ${pkg%[.]*}.t?z${T}"
+    chown 1000:users ${pkg%[.]*}.t?z
+    /sbin/upgradepkg --install-new ${pkg%[.]*}.t?z
+}
+
+exit 0
