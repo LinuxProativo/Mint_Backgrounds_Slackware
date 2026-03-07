@@ -6,6 +6,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Platform-Slackware-004482?style=flat-square&logo=slackware&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Language-Shell_Script-%23121011.svg?style=flat-square&logo=gnu-bash&logoColor=white" alt="Bash">
   <a href="./LICENSE" style="text-decoration:none;"><img src="https://img.shields.io/github/license/LinuxProativo/Mint_Backgrounds_Slackware?color=445566&label=License&style=flat-square"></a>
 </p>
 
