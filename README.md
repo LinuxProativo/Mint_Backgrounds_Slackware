@@ -3,27 +3,28 @@
 </p>
 
 <h1 align="center">Mint Wallpapers Installer for Slackware</h1>
+<h3 align="center">A simple script that installs Linux Mint wallpapers on Slackware systems.</h3>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Platform-Slackware-004482?style=flat-square&logo=slackware&logoColor=white"/>
   <img src="https://img.shields.io/badge/Language-Shell_Script-%23121011.svg?style=flat-square&logo=gnu-bash&logoColor=white" alt="Bash">
-  <a href="./LICENSE" style="text-decoration:none;"><img src="https://img.shields.io/github/license/LinuxProativo/Mint_Backgrounds_Slackware?color=445566&label=License&style=flat-square"></a>
+  <img src="https://img.shields.io/github/languages/code-size/LinuxProativo/Mint_Backgrounds_Slackware?style=flat-square&logo=paperlessngx&label=Code%20Size"/>
+  <img src="https://img.shields.io/github/repo-size/LinuxProativo/Mint_Backgrounds_Slackware?style=flat-square&logo=paperlessngx&label=Repo%20Size"/>
+  <img src="https://img.shields.io/github/license/LinuxProativo/Mint_Backgrounds_Slackware?color=673ab7&label=License&style=flat-square&logo=opensourcehardware&logoColor=white"/>
 </p>
 
+## 🔍 Overview
 
-# Mint Wallpapers Installer for Slackware
-
-A simple script that installs Linux Mint wallpapers on Slackware systems.
-
-This project is intended **exclusively for Slackware Linux** and provides an easy way to bring Mint’s default backgrounds into your environment.
-
-## 📦 About
+This project is intended **exclusively for Slackware Linux** and provides an
+easy way to bring Mint’s default backgrounds into your environment.
 
 This script:
 
-* Downloads or installs Linux Mint wallpaper packages/assets
-* Places them in the appropriate Slackware system directories
-* Makes the wallpapers available in your desktop environment
+* 📌 Downloads or installs Linux Mint wallpaper packages/assets;
+
+* 📌 Places them in the appropriate Slackware system directories;
+
+* 📌 Makes the wallpapers available in your desktop environment;
 
 It is designed to be straightforward — just run it and the wallpapers are installed.
 
@@ -45,17 +46,16 @@ Depending on your desktop environment, they are usually placed in locations such
 * `/usr/share/backgrounds/`
 * or similar system wallpaper directories
 
-## 📜 GNU General Public License
-
-This repository has scripts that were created to be free software. Therefore, they can be
-distributed and/or modified within the terms of the *GNU General Public License*.
-
-> ### [General Public License](https://pt.wikipedia.org/wiki/GNU_General_Public_License)
-
 ## 🛠️ Support & Contributions
 
-Improvements, fixes, and enhancements are welcome!  
-Feel free to open issues or submit pull requests.
+Improvements, fixes, and enhancements are welcome! Feel free to open issues or submit pull requests.
+
+## 📜 GNU General Public License
+
+This repository has scripts that were created to be free software.  
+Therefore, they can be distributed and/or modified within the terms of the ***GNU General Public License***.
+
+> ### See the [General Public License](LICENSE) file for details.
 
 ## 📬 Contact & Support
 
